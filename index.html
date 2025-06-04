@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open in browser</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Добавляем скрипт для определения встроенного браузера -->
+    <script src="https://cdn.jsdelivr.net/npm/inapp-spy@latest/dist/index.global.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #4A4A4A; /* Dark grey background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 150px 0 20px 0; /* Увеличиваем верхний отступ еще больше */
+            position: relative;
+        }
+
+        .block {
+            background-color: #FFFFFF; /* White background for blocks */
+            border-radius: 15px;
+            /* padding: 20px; */ /* Removed padding from block, will add to inner elements */
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            overflow: hidden; /* To contain rounded corners */
+        }
+
+        .info-block {
+            padding: 20px; /* Add padding back to the info block */
+            text-align: center;
+        }
+
+        .info-block h1 {
+            font-size: 1.2em;
+            margin-top: 0;
+            color: #333;
+            margin-bottom: 5px; /* Adjust spacing */
+        }
+
+        .info-block p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .options-block {
+             /* No padding here, list items will have padding */
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .options li {
+            /* Default background for 'Report' and 'Copy link' */
+            background-color: #F8F8F8; /* Slightly darker white */
+            padding: 15px 20px; /* Padding left/right to match block */
+            text-align: left;
+            display: flex;
+            align-items: center;
+            cursor: pointer; /* Keep cursor pointer for visual consistency with example */
+            border-bottom: 1px solid #eee;
+        }
+
+        .options li:last-child {
+            border-bottom: none; /* Remove bottom border for the last item */
+        }
+
+        /* Styling for the 'Open in browser' item */
+        .options li.open-in-browser {
+             background-color: #FFFFFF; /* White background */
+             font-weight: bold; /* Make text bold as in screenshot */
+             color: #007BFF; /* Blue text */
+             /* pointer-events: none; */ /* Make non-clickable as an instruction */
+             /* opacity: 0.7; */
+        }
+
+        .options li i {
+            margin-right: 10px;
+            color: #666; /* Grey color for icons */
+            width: 20px; /* Fixed size for icon area */
+            text-align: center;
+        }
+
+        .options li:hover {
+            background-color: #ededed; /* Slightly darker hover effect */
+        }
+
+        /* Specific styles for the 'Open in browser' icon */
+         .options li.open-in-browser i {
+             color: #007BFF; /* Blue color for the compass icon */
+         }
+
+        .arrow-img {
+            position: fixed;
+            top: 20px; /* Позиция сверху */
+            right: 5px; /* Сдвигаем еще правее */
+            width: 60px; /* Увеличиваем ширину изображения */
+            height: 60px; /* Увеличиваем высоту изображения */
+            z-index: 10; /* Поверх других элементов */
+            animation: moveUpDown 1.5s infinite ease-in-out; /* Применяем анимацию вверх-вниз */
+        }
+
+        /* Анимация движения вверх-вниз */
+        @keyframes moveUpDown {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-10px); opacity: 0.7; } /* Двигаемся вверх и уменьшаем прозрачность */
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Arrow image element -->
+    <img src="стрелка.png" alt="Стрелка" class="arrow-img">
+
+    <!-- Top info block -->
+    <div class="block info-block">
+        <h1>Open in Instagram</h1>
+        <p>To get the best experience, click ... in the top right, and select <strong>Open in browser</strong></p>
+    </div>
+
+    <!-- Options block -->
+    <div class="block options-block">
+        <ul class="options">
+            <li>
+                <i class="fas fa-flag"></i> <!-- Icon: Flag -->
+                <span>Report</span>
+            </li>
+            <li class="open-in-browser" id="open-browser-btn"> <!-- Button remains for visual instruction -->
+                <i class="fas fa-compass"></i> <!-- Icon: Compass -->
+                <span>Open in browser</span>
+            </li>
+            <li>
+                <i class="fas fa-link"></i> <!-- Icon: Link -->
+                <span>Copy link</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Your URL here
+        <a href="http://174.138.14.47/click?lp=1"; // Your URL
+
+        // Removed the timeout and the browser context check to prevent any automatic redirect.
+        // The user must now manually open the link after following the instructions.
+
+        // Removed all browser detection logic (window.top === window.self) - Confirmed removal
+        // Removed the click event listener from #open-browser-btn.
+        // The button on this page is now only a visual instruction.
+
+        // Use inapp-spy to detect the environment
+        const { isInApp, appKey } = InAppSpy();
+
+        // Redirect only if NOT in TikTok or Instagram in-app browser
+        if (!isInApp || (appKey !== 'tiktok' && appKey !== 'instagram')) {
+            window.location.href = targetUrl;
+        }
+    </script>
+</body>
+</html> 
